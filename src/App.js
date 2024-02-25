@@ -103,14 +103,14 @@ function App() {
   }, [theme, element.classList]);
   return (
     <div className="dark:bg-gray-900 bg-gray-300 h-screen sm:h-screen dark:text-white text-black">
-      <div className="fixed right-1 duration-100 dark:bg-gray-800 bg-gray-300 rounded">
+      <div className="fixed sm:right-1 right-3 sm:top-0 top-4 duration-100 dark:bg-gray-800 bg-gray-300 rounded">
         {option?.map((opt) => (
           <button
             key={opt.text}
             onClick={() => {
               setTheme(opt.text);
             }}
-            className={`w-10 h-10 leading-9 text-3xl rounded-full m-1 ${
+            className={`sm:w-10 sm:h-10 w-5 h-2 leading-9 sm:text-3xl text-xl rounded-full m-1 ${
               theme === opt.text && "text-blue-600"
             }`}
           >
@@ -118,7 +118,7 @@ function App() {
           </button>
         ))}
       </div>
-      <div className="sm:flex sm:p-6 pt-32">
+      <div className="sm:flex sm:p-6 pt-4">
         <form className="mx-3 sm:mx-8 sm:p-7 p-6 bg-gray-200 border-4 dark:border-0 border-green-300 text-green-900 dark:bg-gray-800 dark:text-white rounded-lg shadow-lg max-w-2xl">
           <h1 className=" text-xl sm:text-3xl font-semibold mb-6">
             Add a Profile Card Detail
