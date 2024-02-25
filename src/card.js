@@ -1,8 +1,7 @@
 // import Data from "./data.json";
 import React, { useEffect, useState, useRef } from "react";
-import * as htmlToImage from "html-to-image";
 import { useLocation } from "react-router-dom";
-
+import * as htmlToImage from "html-to-image";
 
 function Card() {
   const domEl = useRef(null);
@@ -15,6 +14,7 @@ function Card() {
   };
   const location = useLocation();
   const Data = location.state.data;
+
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
   );
@@ -59,7 +59,7 @@ function Card() {
         localStorage.removeItem("theme");
         break;
     }
-  }, [theme,element.classList]);
+  }, [theme, element.classList]);
   return (
     <div class="h-screen w-screen sm:h-screen bg-green-50  dark:bg-gray-900   flex flex-wrap items-center  justify-center  ">
       <div className="fixed top-1 right-1 duration-100 dark:bg-gray-700 bg-green-50 rounded">
@@ -84,69 +84,65 @@ function Card() {
         </button>
       </div>
 
-      {Data.map((data) => {
+      {Data.map((data, i) => {
         return (
           <div
-            class="max-w-sm sm:max-w-xl border-4 bg-green-100 border-green-200 rounded-xl shadow dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+            className="max-w-sm sm:max-w-xl border-4 bg-green-100 border-green-200 rounded-xl shadow dark:bg-gray-800 dark:border-gray-700 dark:text-white"
             ref={domEl}
           >
-            <div class="h-32 overflow-hidden">
+            <div className="h-32 overflow-hidden">
               <img
-                class="w-full"
+                className="w-full"
                 src="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
                 alt=""
               />
             </div>
-            <div class="flex justify-center px-5  -mt-12">
+            <div className="flex justify-center px-5  -mt-12">
               <img
-                class="h-32 w-32 dark:bg-gray-800 p-2 rounded-full "
+                className="h-32 w-32 dark:bg-gray-800 p-2 rounded-full "
                 src={`data:image/${data.format};base64,${data.encode}`}
                 alt=""
               />
             </div>
-            <div class=" ">
-              <div class="text-center px-14">
-                <h2 class="text-3xl font-bold">{data.name}</h2>
-                <a
-                  class="mt-2 dark:hover:text-blue-500"
-                  href="https://www.instagram.com/immohitdhiman/"
-                  target="BLANK()"
-                >
+            <div className=" ">
+              <div className="text-center px-14">
+                <h2 className="text-3xl font-bold">{data.name}</h2>
+                <p className="mt-2 dark:hover:text-blue-500">
                   @{data.profession}
-                </a>
-                <p class="mt-2 text-sm">{data.des}, </p>
+                </p>
+                <p className="mt-2 text-sm">{data.des}, </p>
               </div>
-              <table class="text-s mt-2 ml-[10%] mb-2">
+              <table className="text-s mt-2 ml-[10%] mb-2">
                 <tbody>
                   <tr>
-                    <td class="px-2 py-2 text-gray-400 dark:text-gray-500 font-semibold">
+                    <td className="px-2 py-2 text-gray-400 dark:text-gray-500 font-semibold">
                       Place
                     </td>
-                    <td class="px-2 py-2">{data.college}</td>
+                    <td className="px-2 py-2">{data.college}</td>
                   </tr>
                   <tr>
-                    <td class="px-2 py-2 text-gray-400 dark:text-gray-500 font-semibold">
+                    <td className="px-2 py-2 text-gray-400 dark:text-gray-500 font-semibold">
                       Phone
                     </td>
-                    <td class="px-2 py-2">{data.phoneNo}</td>
+                    <td className="px-2 py-2">{data.phoneNo}</td>
                   </tr>
                   <tr>
-                    <td class="px-2 py-2 text-gray-400 dark:text-gray-500 font-semibold">
+                    <td className="px-2 py-2 text-gray-400 dark:text-gray-500 font-semibold">
                       Email
                     </td>
-                    <td class="px-2 py-2">{data.email}</td>
+                    <td className="px-2 py-2">{data.email}</td>
                   </tr>
                   <tr>
-                    <td class="px-2 py-2 text-gray-400 dark:text-gray-500 font-semibold">
+                    <td className="px-2 py-2 text-gray-400 dark:text-gray-500 font-semibold">
                       Github Id
                     </td>
                     <td class="px-2 py-2">{data.github}</td>
                   </tr>
                   <tr>
-                    <td class="px-2 py-2 text-gray-400 dark:text-gray-500 font-semibold">
+                    <td className="px-2 py-2 text-gray-400 dark:text-gray-500 font-semibold">
                       Linkedin Id
                     </td>
-                    <td class="px-2 py-2">{data.linkedin}</td>
+                    <td className="px-2 py-2">{data.linkedin}</td>
                   </tr>
                 </tbody>
               </table>
