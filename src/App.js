@@ -15,7 +15,7 @@ function App() {
   const [college, SetCollege] = useState("");
   const [des, Setdes] = useState("");
   const Navigate = useNavigate();
-  const submitReview = () => {
+  const submitReview = async () => {
     if (
       Username !== "" &&
       profession !== "" &&
@@ -27,8 +27,9 @@ function App() {
       des
     ) {
       console.log("dhe");
-      Axios.post(
-        "http://localhost:8000/insert",
+      const res = await Axios.post(
+        // "http://localhost:8000/insert",
+        "https://profileserver.onrender.com/insert",
         {
           file: file,
           Username: Username,
@@ -46,7 +47,8 @@ function App() {
           },
         }
       );
-      Navigate("/card");
+      console.log(res);
+      Navigate("/card", { state: { data: res.data } });
     } else {
       alert("Fill the form");
     }

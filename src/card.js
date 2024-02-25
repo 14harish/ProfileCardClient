@@ -1,6 +1,8 @@
-import Data from "./data.json";
+// import Data from "./data.json";
 import React, { useEffect, useState, useRef } from "react";
 import * as htmlToImage from "html-to-image";
+import { useLocation } from "react-router-dom";
+
 
 function Card() {
   const domEl = useRef(null);
@@ -11,6 +13,8 @@ function Card() {
     link.href = dataUrl;
     link.click();
   };
+  const location = useLocation();
+  const Data = location.state.data;
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
   );
