@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ProfileCardClient/static/css/main.2f04eaf3.css",
-    "main.js": "/ProfileCardClient/static/js/main.f2843c69.js",
+    "main.js": "/ProfileCardClient/static/js/main.e21630bb.js",
     "static/media/Register.svg": "/ProfileCardClient/static/media/Register.9512082e15c6e705cbec9b89f3bb6874.svg",
     "index.html": "/ProfileCardClient/index.html",
     "main.2f04eaf3.css.map": "/ProfileCardClient/static/css/main.2f04eaf3.css.map",
-    "main.f2843c69.js.map": "/ProfileCardClient/static/js/main.f2843c69.js.map"
+    "main.e21630bb.js.map": "/ProfileCardClient/static/js/main.e21630bb.js.map"
   },
   "entrypoints": [
     "static/css/main.2f04eaf3.css",
-    "static/js/main.f2843c69.js"
+    "static/js/main.e21630bb.js"
   ]
 }
